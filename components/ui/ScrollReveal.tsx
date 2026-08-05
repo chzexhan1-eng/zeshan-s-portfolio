@@ -2,7 +2,6 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { fadeUp } from "@/lib/animations";
 
 interface ScrollRevealProps {
   children: React.ReactNode;

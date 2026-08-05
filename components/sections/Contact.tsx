@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send, Github, Instagram, Mail, MapPin, ArrowRight, CheckCircle } from "lucide-react";
+import { Send, Github, Instagram, MapPin, CheckCircle } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 import MagneticButton from "@/components/ui/MagneticButton";
 import { motion, AnimatePresence } from "framer-motion";

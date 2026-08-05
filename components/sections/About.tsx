@@ -2,7 +2,6 @@
 
 import { Shield, Zap, Star, GraduationCap, MapPin } from "lucide-react";
 import ScrollReveal from "@/components/ui/ScrollReveal";
-import { motion } from "framer-motion";
 
 export default function About() {
   return (
