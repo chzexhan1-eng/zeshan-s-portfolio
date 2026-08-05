@@ -1,0 +1,320 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---- Custom Properties ---- */
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #111118;
+  --text-primary: #f0ede8;
+  --text-secondary: #8b8b8b;
+  --accent-cyan: #22d3ee;
+  --accent-blue: #4d8eff;
+  --accent-purple: #a855f7;
+  --border: rgba(255, 255, 255, 0.06);
+  --card-bg: rgba(255, 255, 255, 0.025);
+  --card-border: rgba(255, 255, 255, 0.08);
+}
+
+/* ---- Base Reset ---- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto; /* Lenis handles smooth scroll */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  cursor: none; /* hide default cursor — custom cursor takes over */
+}
+
+/* Hide default cursor on interactive elements too */
+a,
+button,
+[role="button"] {
+  cursor: none;
+}
+
+/* ---- Custom Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ---- Text Selection ---- */
+::selection {
+  background: rgba(34, 211, 238, 0.2);
+  color: #fff;
+}
+
+/* ---- Glass Panel ---- */
+@layer components {
+  .glass-panel {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .glass-card:hover {
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  }
+
+  .section-label {
+    @apply text-xs font-bold uppercase tracking-widest text-accent-cyan;
+  }
+
+  .section-title {
+    @apply text-3xl sm:text-4xl font-black tracking-tight text-white;
+    letter-spacing: -0.02em;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #60a5fa, #22d3ee, #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .skill-tag {
+    @apply px-3.5 py-2 rounded-xl text-xs font-bold bg-white/5 text-gray-300 border border-white/5;
+    transition: all 0.2s ease;
+  }
+
+  .skill-tag:hover {
+    background: rgba(34, 211, 238, 0.08);
+    color: #22d3ee;
+    border-color: rgba(34, 211, 238, 0.3);
+  }
+
+  .tech-badge {
+    @apply px-2.5 py-1 rounded-md text-[9px] font-extrabold uppercase tracking-widest bg-white/5 text-gray-400 border border-white/5;
+  }
+}
+
+/* ---- Noise Texture Overlay ---- */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.015;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* ---- Magnetic Button ---- */
+.magnetic-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  will-change: transform;
+}
+
+/* ---- Hero Gradient Glow ---- */
+.hero-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(77, 142, 255, 0.07) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(60px);
+  animation: float 8s ease-in-out infinite;
+}
+
+/* ---- Shimmer Effect ---- */
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.04), transparent);
+  animation: shimmer 2.5s infinite;
+}
+
+/* ---- Grain Dots ---- */
+.dot-grid {
+  background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+/* ---- Loader ---- */
+.loader-bar {
+  height: 2px;
+  background: linear-gradient(90deg, #22d3ee, #4d8eff, #a855f7);
+  transform-origin: left;
+}
+
+/* ---- Cursor ---- */
+#custom-cursor {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  mix-blend-mode: difference;
+  background: white;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+  will-change: transform;
+}
+
+#cursor-follower {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  background: rgba(34, 211, 238, 0.6);
+  transform: translate(-50%, -50%);
+  will-change: transform;
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+/* ---- Nav Active ---- */
+.nav-link-active {
+  color: white !important;
+}
+
+.nav-link-active::after {
+  width: 100% !important;
+}
+
+/* ---- Clip-path reveals ---- */
+@keyframes clipReveal {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0% 0 0); }
+}
+
+/* ---- Gradient Border ---- */
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(34,211,238,0.3), rgba(168,85,247,0.3), transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* ---- Section padding ---- */
+.section-padding {
+  @apply py-24 lg:py-32;
+}
+
+/* ---- Underline Hover ---- */
+.underline-hover {
+  position: relative;
+}
+.underline-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #22d3ee, #4d8eff);
+  transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.underline-hover:hover::after {
+  width: 100%;
+}
+
+/* ---- Project card ---- */
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card .project-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-card .project-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover .project-label {
+  transform: translateY(0);
+}
+
+/* ---- Bento grid lines ---- */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  body {
+    cursor: auto;
+  }
+  #custom-cursor,
+  #cursor-follower {
+    display: none;
+  }
+}
