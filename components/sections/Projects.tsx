@@ -17,12 +17,30 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "AETHERIA Web App",
+    description:
+      "A peer-to-peer (P2P) real estate marketplace platform built with React, Vite, and 3D interactive elements using Three.js.",
+    image: "/aetheria-web.svg",
+    tags: ["React", "Vite", "Three.js", "Tailwind CSS", "P2P Marketplace"],
+    githubUrl: "https://github.com/chzexhan1-eng/Aetheria_WebApp",
+    featured: true,
+  },
+  {
+    title: "AETHERIA Android App",
+    description:
+      "A mobile real estate application powered by Capacitor, React, and native UI components for seamless P2P property transactions on Android.",
+    image: "/aetheria-android.svg",
+    tags: ["Android", "Capacitor", "React", "Three.js", "Mobile UX"],
+    githubUrl: "https://github.com/chzexhan1-eng/Aetheria_AndroidApp",
+    featured: true,
+  },
+  {
     title: "ConnectX",
     description:
       "A communication platform that enables users to connect through secure messaging and collaboration features with a modern and user-friendly interface.",
     image: "/connectx.png",
     tags: ["React", "CSS", "Node.js", "WebSockets"],
-    githubUrl: "https://github.com/chzexhan1-eng/Full-Stack-Android-Applications-",
+    githubUrl: "https://github.com/chzexhan1-eng/ConnectX",
     featured: true,
   },
   {
@@ -48,7 +66,7 @@ const projects: Project[] = [
       "An AI-powered fitness application that helps users create personalized workout plans and track their fitness progress with intelligent recommendations.",
     image: "/fitforge.png",
     tags: ["React Native", "AI Integration", "Tailwind", "Node.js"],
-    githubUrl: "https://github.com/chzexhan1-eng/Full-Stack-Android-Applications-",
+    githubUrl: "https://github.com/chzexhan1-eng/FitForgeAI",
   },
 ];
 
@@ -64,7 +82,7 @@ export default function Projects() {
           </ScrollReveal>
           <ScrollReveal delay={0.1}>
             <a
-              href="https://github.com/chzexhan1-eng/Full-Stack-Android-Applications-"
+              href="https://github.com/chzexhan1-eng?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-all active:scale-95 bg-white/5 border border-white/10 backdrop-blur-md shadow-sm"
@@ -80,7 +98,7 @@ export default function Projects() {
           {projects.map((project, i) => (
             <ScrollReveal key={project.title} delay={i * 0.08}>
               <motion.div
-                className="glass-panel rounded-3xl overflow-hidden flex flex-col group shadow-xl"
+                className="glass-panel rounded-3xl overflow-hidden flex flex-col group shadow-xl h-full"
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
