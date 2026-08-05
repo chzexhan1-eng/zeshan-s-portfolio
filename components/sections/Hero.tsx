@@ -155,12 +155,11 @@ export default function Hero({ visible }: { visible: boolean }) {
               {/* Avatar Image Frame */}
               <div className="relative w-72 h-72 sm:w-80 sm:h-80 rounded-full overflow-hidden border-[6px] border-black bg-black/80 shadow-2xl flex items-center justify-center backdrop-blur-md">
                 <Image
-                  src="https://zeshan-portfolio-steel.vercel.app/zeshan.jpeg"
+                  src="/zeshan.jpeg"
                   alt="Zeshan Khalid"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   priority
-                  unoptimized
                 />
               </div>
 

@@ -20,7 +20,7 @@ const projects: Project[] = [
     title: "ConnectX",
     description:
       "A communication platform that enables users to connect through secure messaging and collaboration features with a modern and user-friendly interface.",
-    image: "https://zeshan-portfolio-steel.vercel.app/connectx.png",
+    image: "/connectx.png",
     tags: ["React", "CSS", "Node.js", "WebSockets"],
     githubUrl: "https://github.com/chzexhan1-eng/Full-Stack-Android-Applications-",
     featured: true,
@@ -29,7 +29,7 @@ const projects: Project[] = [
     title: "NovaAI",
     description:
       "An AI-powered assistant designed to automate tasks, improve productivity, and simplify everyday workflows for individuals and teams.",
-    image: "https://zeshan-portfolio-steel.vercel.app/novaai.png",
+    image: "/novaai.png",
     tags: ["Next.js", "Tailwind CSS", "OpenAI API", "Python"],
     githubUrl: "https://github.com/chzexhan1-eng/Full-Stack-Android-Applications-",
     featured: true,
@@ -38,7 +38,7 @@ const projects: Project[] = [
     title: "SkyCast",
     description:
       "A weather application that provides real-time weather forecasts, location-based updates, and an intuitive user experience.",
-    image: "https://zeshan-portfolio-steel.vercel.app/skycast.png",
+    image: "/skycast.png",
     tags: ["HTML", "JavaScript", "Weather API", "CSS"],
     githubUrl: "https://github.com/chzexhan1-eng/Full-Stack-Android-Applications-",
   },
@@ -46,7 +46,7 @@ const projects: Project[] = [
     title: "FitForge AI",
     description:
       "An AI-powered fitness application that helps users create personalized workout plans and track their fitness progress with intelligent recommendations.",
-    image: "https://zeshan-portfolio-steel.vercel.app/fitforge.png",
+    image: "/fitforge.png",
     tags: ["React Native", "AI Integration", "Tailwind", "Node.js"],
     githubUrl: "https://github.com/chzexhan1-eng/Full-Stack-Android-Applications-",
   },
@@ -67,11 +67,7 @@ export default function Projects() {
               href="https://github.com/chzexhan1-eng/Full-Stack-Android-Applications-"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-all active:scale-95"
-              style={{
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
-              }}
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider text-gray-300 hover:text-white transition-all active:scale-95 bg-white/5 border border-white/10 backdrop-blur-md shadow-sm"
             >
               <Github size={15} />
               View All on GitHub
@@ -96,15 +92,13 @@ export default function Projects() {
                     fill
                     className="object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                     sizes="(max-width: 768px) 100vw, 50vw"
-                    unoptimized
                   />
                   {/* Overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
 
                   {/* Featured badge */}
                   {project.featured && (
-                    <div className="absolute top-4 left-4 px-3 py-1.5 rounded-lg text-[10px] font-extrabold uppercase tracking-widest text-cyan-300"
-                      style={{ background: "rgba(34,211,238,0.12)", border: "1px solid rgba(34,211,238,0.25)" }}>
+                    <div className="absolute top-4 left-4 px-3 py-1.5 rounded-lg text-[10px] font-extrabold uppercase tracking-widest text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 backdrop-blur-md">
                       Featured
                     </div>
                   )}
