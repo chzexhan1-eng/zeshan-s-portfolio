@@ -20,7 +20,7 @@ const projects: Project[] = [
     title: "AETHERIA Web App",
     description:
       "A peer-to-peer (P2P) real estate marketplace platform built with React, Vite, and 3D interactive elements using Three.js.",
-    image: "/aetheria-web.svg",
+    image: "/aetheria-web.png",
     tags: ["React", "Vite", "Three.js", "Tailwind CSS", "P2P Marketplace"],
     githubUrl: "https://github.com/chzexhan1-eng/Aetheria_WebApp",
     featured: true,
@@ -29,7 +29,7 @@ const projects: Project[] = [
     title: "AETHERIA Android App",
     description:
       "A mobile real estate application powered by Capacitor, React, and native UI components for seamless P2P property transactions on Android.",
-    image: "/aetheria-android.svg",
+    image: "/aetheria-android.png",
     tags: ["Android", "Capacitor", "React", "Three.js", "Mobile UX"],
     githubUrl: "https://github.com/chzexhan1-eng/Aetheria_AndroidApp",
     featured: true,
