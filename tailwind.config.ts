@@ -9,17 +9,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0a0a0f",
-        "bg-secondary": "#111118",
-        "bg-card": "rgba(255,255,255,0.03)",
-        "text-primary": "#f0ede8",
-        "text-secondary": "#8b8b8b",
-        "accent-blue": "#4d8eff",
+        background: "#030712",
+        "bg-secondary": "#090d16",
+        "bg-card": "rgba(255, 255, 255, 0.03)",
+        "text-primary": "#e5e7eb",
+        "text-secondary": "#9ca3af",
+        "accent-blue": "#3b82f6",
         "accent-cyan": "#22d3ee",
         "accent-purple": "#a855f7",
-        "accent-green": "#4ade80",
-        "accent-orange": "#fb923c",
-        border: "rgba(255,255,255,0.06)",
+        "accent-emerald": "#10b981",
+        border: "rgba(255, 255, 255, 0.08)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
@@ -32,7 +31,7 @@ const config: Config = {
         "fade-in": "fadeIn 0.6s ease forwards",
         "slide-up": "slideUp 0.7s cubic-bezier(0.76, 0, 0.24, 1) forwards",
         pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "spin-slow": "spin 8s linear infinite",
+        "spin-slow": "spin 12s linear infinite",
         float: "float 6s ease-in-out infinite",
       },
       keyframes: {
@@ -48,13 +47,6 @@ const config: Config = {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-10px)" },
         },
-      },
-      backdropBlur: {
-        xs: "2px",
-      },
-      transitionTimingFunction: {
-        "premium": "cubic-bezier(0.76, 0, 0.24, 1)",
-        "smooth": "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
       },
     },
   },
